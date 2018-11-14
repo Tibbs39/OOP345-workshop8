@@ -1,5 +1,13 @@
- // Workshop 8 - Smart Pointers
- // List.h
+// Name:  Kenneth Yue
+// Seneca Student ID: 127932176
+// Seneca email:  kyue3@myseneca.ca
+// Date of completion: Nov 2, 2018
+//
+// I confirm that the content of this file is created by me,
+// with exception of the parts provided to me by my professor
+ 
+// Workshop 8 - Smart Pointers
+// List.h
 #ifndef W8_LIST_H
 #define W8_LIST_H
 
@@ -30,15 +38,17 @@ namespace w8 {
 		size_t size() const { return list.size(); }
 		const T& operator[](size_t i) const { return list[i]; }
 
-		// TODO: Overload the += operator with a smart pointer
-		//       as a second operand.
+		// Student Portion
+		// Overload the += operator with a smart pointer as a second operand.
+		List& operator+=(std::unique_ptr<T>& rhs) {
+			list.push_back(*rhs);
+		}
 
-
-
-		// TODO: Overload the += operator with a raw pointer
-		//       as a second operand.
-
-
+		// Overload the += operator with a raw pointer as a second operand.
+		List& operator+=(T*& rhs) {
+			list.push_back(*rhs);
+		}
+		// end of Student Portion
 
 		void display(std::ostream& os) const {
             os << std::fixed << std::setprecision(2);

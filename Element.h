@@ -1,3 +1,11 @@
+// Name:  Kenneth Yue
+// Seneca Student ID: 127932176
+// Seneca email:  kyue3@myseneca.ca
+// Date of completion: Nov 2, 2018
+//
+// I confirm that the content of this file is created by me,
+// with exception of the parts provided to me by my professor
+
 // Workshop 8 - Smart Pointers
 // Element.h
 #ifndef W8_ELEMENT_H
@@ -85,9 +93,12 @@ namespace w8 {
 		}
 
 
-
-		// TODO: add the validate() function here
-
+		// Student Portion
+		// throws an error if the price is invalid
+		void validate() const { 
+			if (price < 0) throw std::string("*** Negative prices are invalid ***");
+		}
+		// end of Student Portion
 
 
         void display(std::ostream& os) const
