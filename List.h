@@ -42,11 +42,15 @@ namespace w8 {
 		// Overload the += operator with a smart pointer as a second operand.
 		List& operator+=(std::unique_ptr<T>& rhs) {
 			list.push_back(*rhs);
+
+			return *this;
 		}
 
 		// Overload the += operator with a raw pointer as a second operand.
 		List& operator+=(T*& rhs) {
 			list.push_back(*rhs);
+
+			return *this;
 		}
 		// end of Student Portion
 
